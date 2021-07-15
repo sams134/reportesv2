@@ -24,4 +24,8 @@ class Cliente extends Model
     {
         return $this->hasMany('App\Models\Motor','id_cliente')->orderBy('year','desc')->orderBy('os','desc');
     }
+    public function contactos()
+    {
+        return $this->hasMany('App\Models\Contacto','id_cliente');
+    }
 }

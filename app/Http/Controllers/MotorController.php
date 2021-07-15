@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Cliente;
 use App\Models\Motor;
 use Illuminate\Http\Request;
 
@@ -15,7 +16,8 @@ class MotorController extends Controller
     public function index()
     {
         //
-        return view('motores.index');
+        $motores = Motor::select('id_motor','year','os','id_cliente','hp','hpkw')->orderBy('year','desc')->orderBy('os','desc')->paginate(200);
+        return view('motores.index',compact('motores'));
     }
 
     /**
@@ -23,9 +25,26 @@ class MotorController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function create()
+    public function create($id_cliente = 0)
     {
-        //
+        // busqueda de nueva OS
+        $year = Motor::select('year')->max('year');
+        $os = Motor::where('year','=',$year)->max('os');
+        $newos = intval($os)+1;
+        $newos = str_pad($newos, 4, '0', STR_PAD_LEFT);
+
+
+        $clientes = Cliente::select('id_cliente','cliente')->orderBy('cliente')->get();
+        $selectedCustomer = Cliente::find($id_cliente);
+       
+        return view('motores.create',
+                            [
+                                'clientes'=>$clientes,
+                                'selectedClient' => $selectedCustomer,
+                                'id_cliente' => $id_cliente,
+                                'newYear'=>$year,
+                                'newOs'=>$newos 
+                            ]);
     }
 
     /**

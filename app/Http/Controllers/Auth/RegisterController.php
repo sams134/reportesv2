@@ -42,6 +42,17 @@ class RegisterController extends Controller
     }
 
     /**
+     * Override the call of the registration view.
+     *
+     * Call to userTypes
+     * @return \Illuminate\View\View
+     */
+    public function showRegistrationForm()
+    {
+        return view('auth.register');
+    }
+
+    /**
      * Get a validator for an incoming registration request.
      *
      * @param  array  $data
@@ -69,7 +80,8 @@ class RegisterController extends Controller
             'name' => $data['name'],
             'email' => $data['email'],
             'password' => Hash::make($data['password']),
-            'userType' => $data['username'],
+            'username' => $data['username'],
+            'userType' => $data['userType'],
         ]);
     }
 }

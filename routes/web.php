@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\AjaxController;
 use App\Http\Controllers\ClientesController;
 use App\Http\Controllers\MotorController;
 use Illuminate\Support\Facades\Route;
@@ -28,6 +29,11 @@ Route::resource('clientes', ClientesController::class);
 
 // Motores
 Route::resource('motores', MotorController::class);
+Route::get('motores/{id_cliente}/create', [MotorController::class,'create'])->name('motores.create_with_cliente');
+
+//Ajax
+Route::get('ajax/motores/contactoSelect/{id}', [AjaxController::class,'contactoSelect']);
+
 
 Auth::routes();
 

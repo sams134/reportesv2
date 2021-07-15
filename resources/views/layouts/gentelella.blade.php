@@ -11,6 +11,9 @@
      <!-- Styles -->
      <link href="{{ asset('css/app.css') }}" rel="stylesheet">
      <link href="{{ asset('css/custom.css') }}" rel="stylesheet">
+     {{-- Styles called fro sub-views --}}
+     @yield('styles')
+     
   </head>
 
   <body class="nav-md">
@@ -105,9 +108,9 @@
     </div>
     <!-- Scripts -->
     <script src="{{asset('js/app.js') }}"></script>
-    <!-- Custom Theme Scripts -->
     <script src="{{asset('js/custom.js')}}"></script>
     @yield('script')
+   
   </body>
 
 </html>

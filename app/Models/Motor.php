@@ -9,4 +9,8 @@ class Motor extends Model
 {
     use HasFactory;
     
+    public function cliente()
+    {
+        return $this->belongsTo('App\Models\Cliente','id_cliente');
+    }
 }

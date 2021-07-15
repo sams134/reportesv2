@@ -72,7 +72,7 @@
                                 </td>
                                 <td class="d-sm-none d-md-block">
                                     <a href="" class="btn btn-sm btn-primary">Ver Motores</a>
-                                    <a href="" class="btn btn-sm btn-success">Agregar Motor</a>
+                                    <a href="{{route('motores.create_with_cliente',$cliente->id_cliente)}}" class="btn btn-sm btn-success">Agregar Motor</a>
                                     <a href="" class="btn btn-sm btn-danger">Eliminar Cliente</a>
                                 </td>
                             </tr>    
