@@ -222,6 +222,7 @@ th {
 label {
   display: inline-block;
   margin-bottom: 0.5rem;
+  font-weight: 700;
 }
 
 button {
@@ -242,7 +243,9 @@ textarea {
   font-size: inherit;
   line-height: inherit;
 }
-
+input[type="text"],optgroup{
+  font-size: 12px;
+}
 button,
 input {
   overflow: visible;
