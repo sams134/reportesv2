@@ -26,6 +26,7 @@ Route::get('/', function () {
 
 // Clientes
 Route::resource('clientes', ClientesController::class);
+Route::post('clientes/find', [ClientesController::class,'findLike'])->name('clientes.find');
 
 // Motores
 Route::resource('motores', MotorController::class);
@@ -33,7 +34,7 @@ Route::get('motores/{id_cliente}/create', [MotorController::class,'create'])->na
 
 //Ajax
 Route::get('ajax/motores/contactoSelect/{id}', [AjaxController::class,'contactoSelect']);
-
+Route::get('ajax/clienteSelect/{id_cliente}',[AjaxController::class,'getDataClient']);
 
 Auth::routes();
 

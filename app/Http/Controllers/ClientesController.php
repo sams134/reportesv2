@@ -3,51 +3,35 @@
 namespace App\Http\Controllers;
 
 use App\Models\Cliente;
+use App\Models\InfoCliente;
 use Illuminate\Http\Request;
 
 class ClientesController extends Controller
 {
-    /**
-     * Display a listing of the resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
     public function index()
     {
         //        
         $clientes = Cliente::orderBy('cliente')->paginate(100);
         return view('clientes.index',['title'=>'Clientes','clientes'=>$clientes]);
     }
-
-    /**
-     * Show the form for creating a new resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
     public function create()
     {
         //
         return view('clientes.create',['title'=>'Clientes']);
     }
-
-    /**
-     * Store a newly created resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @return \Illuminate\Http\Response
-     */
     public function store(Request $request)
     {
-        //
-
+        $newCustomer = Cliente::create(['cliente'=>$request->cliente]);
+        InfoCliente::create([
+            'nit' => $request->nit,
+            'razon_social' => $request->razon_social,
+            'direccion_fiscal' => $request->direccion_fiscal,
+            'direccion_planta' => $request->direccion_planta,
+            'comentarios' => $request->comentarios,
+            'id_cliente' => $newCustomer->id_cliente
+        ]);
+        return redirect()->route('clientes.index')->with('success','Cliente '.$newCustomer->cliente.' Agregado No: '.$newCustomer->id_cliente);
     }
-
-    /**
-     * Display the specified resource.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
     public function show($id)
     {
         //
@@ -55,38 +39,23 @@ class ClientesController extends Controller
         setlocale(LC_ALL,"es_ES");
         return view('clientes.show',compact('cliente'));
     }
-
-    /**
-     * Show the form for editing the specified resource.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
     public function edit($id)
     {
         //
     }
-
-    /**
-     * Update the specified resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
     public function update(Request $request, $id)
     {
         //
     }
-
-    /**
-     * Remove the specified resource from storage.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
     public function destroy($id)
     {
         //
+    }
+    public function findLike(Request $request)
+    {
+        
+        $posiblesClientes = Cliente::where('cliente','LIKE','%'.$request->cliente.'%')->get();
+        return $posiblesClientes;
+
     }
 }

@@ -53,7 +53,7 @@
         <div class="form-group row">            
             <label for="potencialbl" class="control-label col-md-3 col-sm-3 col-xs-12'">Potencia:</label>
             <div class="col-md-4 col-sm-4 col-xs-12">             
-                <input type="text" name="hp" id="" class="form-control" placeholder="HP/KW" required>
+                <input type="text" name="hp" class="form-control" placeholder="HP/KW">
             </div><!--columna -->
             <div class="col-md-5 col-sm-5 col-xs-12">                        
                Aproximados <input name="reales" type="checkbox" class="js-switch"  checked/>  Reales 

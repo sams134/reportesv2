@@ -182,7 +182,7 @@
             <label for="commentInvlbl" class="control-label col-md-3 col-sm-3 col-xs-12">Comentarios de Inventario:</label>
             <div class="col-md-9 col-sm-9 col-xs-12">  
                     
-                    <textarea name="comentInventario" id="" cols="30" rows="4" class="form-control" placeholder="Partes adicionales que ingresaron o daños específicos"></textarea>
+                    <textarea name="comentInventario" cols="30" rows="4" class="form-control" placeholder="Partes adicionales que ingresaron o daños específicos"></textarea>
             </div><!--columna -->
         </div><!--form group -->
     </div> {{-- x-content --}}

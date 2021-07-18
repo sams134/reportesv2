@@ -9,5 +9,5 @@ class InfoCliente extends Model
 {
     use HasFactory;
 
-    
+    protected $guarded = [];
 }

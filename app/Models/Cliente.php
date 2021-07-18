@@ -11,6 +11,8 @@ class Cliente extends Model
 
     protected $primaryKey = 'id_cliente';
 
+    protected $fillable = ['cliente'];
+
     public function infoCliente()
     {
         return $this->hasOne('App\Models\InfoCliente','id_cliente');

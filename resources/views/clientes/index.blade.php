@@ -18,18 +18,21 @@
             </div>
             <div class="x_content">
                 <div class="col-md-6 col-sm-6">
-                    <button type="button" class="btn btn-secondary float-left">Nuevo Cliente</button>
-         
+                    <a href="{{route('clientes.create')}}" class="btn btn-secondary float-left">Nuevo Cliente</a>
                     <button type="button" class="btn btn-secondary">Nuevo Contacto</button>
                 </div>
-                <div class="col-md-6 col-sm-12">
-                    <div class="input-group">
-                        <input type="text" class="form-control" placeholder="Busca Cliente...">
-                        <span class="input-group-btn">
-                        <button class="btn btn-secondary" type="button">Go!</button>
-                        </span>
+                
+                <form action="{{route('clientes.find')}}" class="form-froup" method="POST">
+                    @csrf
+                    <div class="col-md-6 col-sm-12">
+                        <div class="input-group">
+                            <input type="text" class="form-control" name="cliente" placeholder="Busca Cliente...">
+                            <span class="input-group-btn">
+                            <button class="btn btn-secondary" type="submit">Buscar</button>
+                            </span>
+                        </div>
                     </div>
-                </div>
+                </form>
             </div>
             
         </div>
@@ -54,22 +57,20 @@
                         <tr>
                             <th width="20px">#</th>
                             <th class="text-left">Cliente</th>
+                            <th class="">Cant Motores</th>
                             <th width="auto" class="d-sm-none d-md-block">Operaciones</th>
                         </tr>
                     </thead>
                     <tbody>
                         @foreach ($clientes as $cont=>$cliente)
                             <tr>
+                                <td> {{($clientes->currentPage()-1)*100+$cont+1}} </td>
                                 <td>
-                                  {{($clientes->currentPage()-1)*100+$cont+1}}
-                                    
-                                   
-                                <td>
-
                                     <a href="{{route('clientes.show',$cliente->id_cliente)}}">
                                         {{$cliente->cliente}} 
                                     </a>
                                 </td>
+                                <td class="">{{$cliente->motores->count()}}</td>
                                 <td class="d-sm-none d-md-block">
                                     <a href="" class="btn btn-sm btn-primary">Ver Motores</a>
                                     <a href="{{route('motores.create_with_cliente',$cliente->id_cliente)}}" class="btn btn-sm btn-success">Agregar Motor</a>

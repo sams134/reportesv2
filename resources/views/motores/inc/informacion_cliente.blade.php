@@ -39,7 +39,7 @@
             <div class="col-md-9 col-sm-9 col-xs-12"> 
                    
                        <div class='input-group date mt-2' id='datetimepicker1' >
-                           <input type='text' class="form-control" name='dateIngreso' required/>
+                           <input type='text' class="form-control" name='dateIngreso' />
                            <span class="input-group-addon">
                             <i class="fa fa-calendar"></i>
                            </span>
@@ -49,14 +49,14 @@
         <div class="form-group row">
             <label for="comentarios" class="control-label col-md-3 col-sm-3 col-xs-12">Comentarios del Cliente:</label>
             <div class="col-md-9 col-sm-9 col-xs-12">    
-                  <textarea name="trabajoARealizar" id="" class="form-control col-md-" placeholder="Rebobinado.." required></textarea>
+                  <textarea name="trabajoARealizar" class="form-control col-md-" placeholder="Rebobinado.."></textarea>
             </div><!--columna -->
         </div><!--form group -->
         <div class="form-group row">             
             <label for="contacto" class="control-label col-md-3 col-sm-3 col-xs-12">Contacto: </label>
             <div class="col-md-9 col-sm-9 col-xs-12">  
                 @if ($id_cliente != 0)                
-                     <select name="contactoTXT" id="contactoTXT" class="form-control" required>
+                     <select name="contactoTXT" id="contactoTXT" class="form-control">
                            @foreach($selectedClient->contactos as $contacto)
                               <option value="{{$contacto->id}}">{{$contacto->contacto}} </option>                                                                              
                            @endforeach
@@ -78,9 +78,9 @@
              <label for="tel_contacto" class="control-label col-md-3 col-sm-3 col-xs-12">Telefono Contacto:</label>
             <div class="col-md-9 col-sm-9 col-xs-12">  
                 @if ($id_cliente != 0)                                   
-                    <input type="text" name="telefono" value="{{$selectedClient->telefono}}" id="id_telefonoTXT" class="form-control" placeholder="Telefono de Contacto" required>
+                    <input type="text" name="telefono" value="{{$selectedClient->telefono}}" id="id_telefonoTXT" class="form-control" placeholder="Telefono de Contacto">
                 @else
-                    <input type="text" name="telefono" value="" id="id_telefonoTXT" class="form-control" placeholder="Telefono de Contacto" required>
+                    <input type="text" name="telefono" value="" id="id_telefonoTXT" class="form-control" placeholder="Telefono de Contacto" >
                 @endif
             </div><!--columna -->
         </div><!--form group -->
@@ -88,9 +88,9 @@
             <label for="email_contacto" class="control-label col-md-3 col-sm-3 col-xs-12">Email:</label>
             <div class="col-md-9 col-sm-9 col-xs-12">  
                     @if ($id_cliente != 0)                    
-                        <input type="text" name="email" value="{{$selectedClient->email}}" id="id_email" class="form-control text-uppercase" placeholder="Email del contacto" required>
+                        <input type="text" name="email" value="{{$selectedClient->email}}" id="id_email" class="form-control text-uppercase" placeholder="Email del contacto">
                     @else
-                        <input type="text" name="email" value="" id="id_email" class="form-control " placeholder="Email del contacto" required>
+                        <input type="text" name="email" value="" id="id_email" class="form-control " placeholder="Email del contacto">
                     @endif
             </div><!--columna -->
         </div><!--form group -->

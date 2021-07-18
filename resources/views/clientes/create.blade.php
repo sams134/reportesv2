@@ -20,34 +20,36 @@
                 
                 
                 <form action="{{route('clientes.store')}}" class="form-horizontal form-label-left input_mask" method="POST">
+                  @csrf
                     <div class="form-group text-right row">
                         <label for="cliente" class="control-label col-md-3 col-sm-3 col-xs-12">Cliente:</label>
                        <div class="col-md-9 col-sm-9 col-xs-12">
-                          <input type="text" name="cliente" class="form-control" placeholder="Nombre del Cliente" required>
+                          <input type="text" name="cliente" class="form-control" placeholder="Nombre del Cliente" value="A" required>
                        </div>
                     </div>
                     <div class="form-group text-right row">
                         <label for="nit" class="control-label col-md-3 col-sm-3 col-xs-12">Nit:</label>
                        <div class="col-md-9 col-sm-9 col-xs-12">
-                          <input type="text" name="nit" class="form-control" placeholder="Nit del Cliente" required>
+                          <input type="text" name="nit" class="form-control" placeholder="Nit del Cliente" value="123" required>
                        </div>
                     </div>
                     <div class="form-group text-right row">
                         <label for="direccion_fiscal" class="control-label col-md-3 col-sm-3 col-xs-12">Dirección Fiscal:</label>
                        <div class="col-md-9 col-sm-9 col-xs-12">
-                          <input type="text" name="direccion_fiscal" class="form-control" placeholder="Dirección fiscal del cliente">
+                          <input type="text" name="direccion_fiscal" class="form-control" value="dir" placeholder="Dirección fiscal del cliente">
                        </div>
                     </div>
                     <div class="form-group text-right row">
                         <label for="direccion_planta" class="control-label col-md-3 col-sm-3 col-xs-12">Dirección Planta:</label>
                        <div class="col-md-9 col-sm-9 col-xs-12">
-                          <input type="text" name="direccion_planta" class="form-control" placeholder="Direccion de ubicacion de los equipos">
+                          <input type="text" name="direccion_planta" class="form-control" value="dirP" placeholder="Direccion de ubicacion de los equipos">
                        </div>
                     </div>
                     <div class="form-group text-right row">
                         <label for="comentarios" class="control-label col-md-3 col-sm-3 col-xs-12">Comentarios sobre Cliente:</label>
                         <div class="col-md-9 col-sm-9 col-xs-12">
                            <textarea name="infoCliente" class="form-control" placeholder="Toda la informacion adicional que se requiera guardar" id="comment">
+                              comentario
                            </textarea>
                         </div>
                      </div>
