@@ -35,25 +35,25 @@
          <div class="form-group row">
             <label for="arealbl" class="control-label col-md-3 col-sm-3 col-xs-12"> Nombre o Area de Equipo:</label>
             <div class="col-md-9 col-sm-9 col-xs-12">                  
-                <input type="text" name="equipment" class="form-control text-uppercase input-sm" placeholder="Nombre Equipo-Area (i.e. Bomba Alimentacion - Calderas)">
+                <input type="text" name="equipment" value="Area" class="form-control text-uppercase input-sm" placeholder="Nombre Equipo-Area (i.e. Bomba Alimentacion - Calderas)">
             </div><!--columna -->
         </div><!--form group -->
         <div class="form-group row">
             <label for="Marcalbl" class="control-label col-md-3 col-sm-3 col-xs-12">Marca:</label>
             <div class="col-md-9 col-sm-9 col-xs-12">             
-                <input type="text" name="marca" class="form-control text-uppercase" placeholder="Marca">                        
+                <input type="text" name="marca" value="weg" class="form-control text-uppercase" placeholder="Marca">                        
             </div><!--columna -->
         </div><!--form group -->
         <div class="form-group row">
             <label for="Aplicacionlbl" class="control-label col-md-3 col-sm-3 col-xs-12'">Aplicaci&oacute;n:</label>
             <div class="col-md-9 col-sm-9 col-xs-12">  
-                <input type="text" name="aplicacion" class="form-control text-uppercase" placeholder="(Moto-reductor, Bomba, Ventilador, Molino, etc)">                      
+                <input type="text" name="aplicacion" value="bomba" class="form-control text-uppercase" placeholder="(Moto-reductor, Bomba, Ventilador, Molino, etc)">                      
             </div><!--columna -->
         </div><!--form group -->
         <div class="form-group row">            
             <label for="potencialbl" class="control-label col-md-3 col-sm-3 col-xs-12'">Potencia:</label>
             <div class="col-md-4 col-sm-4 col-xs-12">             
-                <input type="text" name="hp" class="form-control" placeholder="HP/KW">
+                <input type="text" name="hp" value="100" class="form-control" placeholder="HP/KW">
             </div><!--columna -->
             <div class="col-md-5 col-sm-5 col-xs-12">                        
                Aproximados <input name="reales" type="checkbox" class="js-switch"  checked/>  Reales 
@@ -62,7 +62,7 @@
          <div class="form-group row">            
             <label for="hpkwlbl" class="control-label col-md-3 col-sm-3 col-xs-12">HP / KW</label>
              <div class="col-md-3 col-sm-3 col-xs-6">
-                      HP <input name="hpkw" type="checkbox" class="js-switch"  /> KW                         
+                       KW <input name="hpkw" type="checkbox" class="js-switch"  checked/> HP                         
              </div> <!--columna -->                                                    
         </div><!--form group -->
         <div class="form-group row">
@@ -74,55 +74,55 @@
         <div class="form-group row">
             <label for="rpmlbl" class="control-label col-md-3 col-sm-3 col-xs-12">Rpm:</label>
             <div class="col-md-9 col-sm-9 col-xs-12">  
-                <input type="text" name="rpm" value="" class="form-control" placeholder="Rpm">                  
+                <input type="text" name="rpm" value="1780" class="form-control" placeholder="Rpm">                  
             </div><!--columna -->
         </div><!--form group -->
         <div class="form-group row">
             <label for="serielbl" class="control-label col-md-3 col-sm-3 col-xs-12">Num. Serie:</label>
             <div class="col-md-9 col-sm-9 col-xs-12">  
-                <input type="text" name="serie" class="form-control text-uppercase" placeholder="No. Serie">                         
+                <input type="text" name="serie" value="serie" class="form-control text-uppercase" placeholder="No. Serie">                         
             </div><!--columna -->
         </div><!--form group -->
         <div class="form-group row">
             <label for="modelolbl" class="control-label col-md-3 col-sm-3 col-xs-12">Num. de Modelo:</label>
             <div class="col-md-9 col-sm-9 col-xs-12">  
-                <input type="text" name="modelo" class="form-control text-uppercase" placeholder="Modelo">
+                <input type="text" name="modelo" value="modelo" class="form-control text-uppercase" placeholder="Modelo">
             </div><!--columna -->
         </div><!--form group -->
         <div class="form-group row">
             <label for="voltajelbl" class="control-label col-md-3 col-sm-3 col-xs-12">Voltaje(s):</label>
             <div class="col-md-9 col-sm-9 col-xs-12">   
-                <input type="text" name="voltaje" class="form-control text-uppercase" placeholder="230/460">                       
+                <input type="text" name="voltaje" value="230" class="form-control text-uppercase" placeholder="230/460">                       
             </div><!--columna -->
         </div><!--form group -->
         <div class="form-group row">
                 <label for="amperajeslbl" class="control-label col-md-3 col-sm-3 col-xs-12">Amperajes(s):</label>
                 <div class="col-md-9 col-sm-9 col-xs-12">    
-                    <input type="text" name="amperajes" class="form-control text-uppercase" placeholder="Amps">                     
+                    <input type="text" name="amperajes" value="23" class="form-control text-uppercase" placeholder="Amps">                     
                 </div><!--columna -->
         </div><!--form group -->
         <div class="form-group row">
                 <label for="framelbl" class="control-label col-md-3 col-sm-3 col-xs-12">Frame:</label>
                 <div class="col-md-9 col-sm-9 col-xs-12">  
-                    <input type="text" name="frame" class="form-control text-uppercase" placeholder="frame">                         
+                    <input type="text" name="frame" value="frame" class="form-control text-uppercase" placeholder="frame">                         
                 </div><!--columna -->
         </div><!--form group -->
         <div class="form-group row">
                 <label for="frecuencialbl" class="control-label col-md-3 col-sm-3 col-xs-12">Frecuencia:</label>
                 <div class="col-md-9 col-sm-9 col-xs-12">     
-                    <input type="text" name="hz" class="form-control text-uppercase" placeholder="Hz">                     
+                    <input type="text" name="hz" value="60" class="form-control text-uppercase" placeholder="Hz">                     
                 </div><!--columna -->
         </div><!--form group -->
         <div class="form-group row">
                 <label for="pflbl" class="control-label col-md-3 col-sm-3 col-xs-12">Factor de Potencia:</label>
                 <div class="col-md-9 col-sm-9 col-xs-12">  
-                    <input type="text" name="pf" class="form-control text-uppercase" placeholder="pf">                         
+                    <input type="text" name="pf" value="0.88" class="form-control text-uppercase" placeholder="pf">                         
                 </div><!--columna -->
         </div><!--form group -->
         <div class="form-group row">
             <label for="efflbl" class="control-label col-md-3 col-sm-3 col-xs-12">Eficiencia:</label>
             <div class="col-md-9 col-sm-9 col-xs-12">                           
-                <input type="text" name="eff" class="form-control text-uppercase" placeholder="Nom. Eff">
+                <input type="text" name="eff" value="0.91" class="form-control text-uppercase" placeholder="Nom. Eff">
             </div><!--columna -->
         </div><!--form group -->
         <div class="form-group row">

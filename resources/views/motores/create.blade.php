@@ -3,6 +3,7 @@
 
 @section('content')
     <form action="{{route('motores.store')}}" method="post" enctype="multipart/form-data" id="my-dropzone" class="form-horizontal form-label-left input_mask dropzone">
+        @csrf
         <div class="row">
             <div class="col-lg-6 col-md-12 col-xs-12" id="wrap_listado">
                 @include('motores.inc.informacion_cliente')

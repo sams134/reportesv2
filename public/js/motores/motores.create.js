@@ -67,7 +67,7 @@ Dropzone.options.myDropzone = {
           submitBtn.addEventListener("click", function(e){
                e.preventDefault();
                e.stopPropagation();
-               console.log('ver validation');
+               
                $('#datetimepicker1 input[type=text]').css({'background-color' : '#fff', 'border':'1px solid #ccc'});
                $('#year').css({'background-color' : '#Fff', 'border':'1px solid #ccc'});
                $('#newOs').css({'background-color' : '#Fff', 'border':'1px solid #ccc'});
@@ -104,12 +104,12 @@ Dropzone.options.myDropzone = {
                
                
               
-              if ($('#contactohide').val() == ""){
+              /* if ($('#contactohide').val() == ""){
                      $('#contactoTXT').css({'background-color' : '#FAEDEC', 'border':'1px solid #E85445'});
                      validated = false;
                      alert('Falta el contacto')
                      equipo = equipo==null?$('#contactoTXT'):equipo;
-              }
+              } */
               if ($('#tipoequipohide').val() == ""){
                      $('#id_tipoequipo').css({'background-color' : '#FAEDEC', 'border':'1px solid #E85445'});
                      validated = false;
